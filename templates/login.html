@@ -1,0 +1,86 @@
+<!--<!DOCTYPE HTML>-->
+
+<!--<html>-->
+<!--	<head>-->
+<!--		<title>Login</title>-->
+<!--	</head>-->
+<!--	<body>-->
+<!--        <div class="container">-->
+<!--		<h1>Login</h1>-->
+<!--        &lt;!&ndash; This is where our form will go. &ndash;&gt;-->
+<!--&lt;!&ndash;		<form method="POST" action="/">&ndash;&gt;-->
+<!--&lt;!&ndash;		<form method="POST" action="{{ url_for('login') }}">&ndash;&gt;-->
+<!--		<form method="POST" action="{{ url_for('login') }}" novalidate>-->
+<!--&lt;!&ndash;			{# { login_form.csrf_token } #}&ndash;&gt;-->
+<!--&lt;!&ndash;			{# { login_form.email_address.label }} {{ login_form.email_address(size=30) } #}&ndash;&gt;-->
+<!--&lt;!&ndash;			{# { login_form.password.label }} {{ login_form.password(size=30) } #}&ndash;&gt;-->
+<!--			{# { login_form.csrf_token } #}-->
+<!--			<p>-->
+<!--				{# { login_form.email_address.label } #}-->
+<!--				<br>-->
+<!--				{# { login_form.email_address(size=30) } #}-->
+<!--				<br>-->
+<!--				{# % for error in login_form.email_address.errors % #}-->
+<!--					<span style="color: red;">-->
+<!--						{# { error } #}-->
+<!--					</span>-->
+<!--				{# % endfor % #}-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				{# { login_form.password.label } #}-->
+<!--				<br>-->
+<!--				{# { login_form.password(size=30) } #}-->
+<!--				<br>-->
+<!--				{# % for error in login_form.password.errors % #}-->
+<!--					<span style="color: red;">-->
+<!--						{# { error } #}-->
+<!--					</span>-->
+<!--				{# % endfor % #}-->
+<!--			</p>-->
+<!--&lt;!&ndash;			<input type="submit" value="Log in">&ndash;&gt;-->
+<!--			{# { login_form.log_in_button } #}-->
+<!--		</form>-->
+<!--        </div>-->
+<!--	</body>-->
+<!--</html>-->
+
+<!--{# % extends 'base.html' % #}-->
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+	Login
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h1>Login</h1>
+<!--		<form method="POST" action="{# { url_for('login') } #}" novalidate>-->
+<!--			{# { login_form.csrf_token } #}-->
+<!--			<p>-->
+<!--				{# { login_form.email_address.label } #}-->
+<!--				<br>-->
+<!--				{# { login_form.email_address(size=30) } #}-->
+<!--				<br>-->
+<!--				{# % for error in login_form.email_address.errors % #}-->
+<!--					<span style="color: red;">-->
+<!--						{# { error } #}-->
+<!--					</span>-->
+<!--				{# % endfor % #}-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				{# { login_form.password.label } #}-->
+<!--				<br>-->
+<!--				{# { login_form.password(size=30) } #}-->
+<!--				<br>-->
+<!--				{# % for error in login_form.password.errors % #}-->
+<!--					<span style="color: red;">-->
+<!--						{# { error } #}-->
+<!--					</span>-->
+<!--				{# % endfor % #}-->
+<!--			</p>-->
+<!--			{# { login_form.log_in_button } #}-->
+<!--		</form>-->
+		{{ wtf.quick_form(login_form, novalidate=True) }}
+	</div>
+{% endblock %}
